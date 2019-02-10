@@ -1,5 +1,5 @@
 echo ""
-echo "Restarting garden device services"
+echo "Restarting system device services"
 echo ""
 
 DIR=$PWD
@@ -13,10 +13,10 @@ else
   echo "Device name: $DEVICE_NAME"
 
   echo "Restart MQTT bridge service" && \
-  sudo systemctl restart greensense-mqtt-bridge-$DEVICE_NAME.service && \
+  sudo systemctl restart juiceiot-mqtt-bridge-$DEVICE_NAME.service && \
 
   echo "Restart Updater service" && \
-  sudo systemctl restart greensense-updater-$DEVICE_NAME.service && \
+  sudo systemctl restart juiceiot-updater-$DEVICE_NAME.service && \
 
   echo "Garden device services restarted for '$DEVICE_NAME'"
 

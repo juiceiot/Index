@@ -1,5 +1,5 @@
 echo ""
-echo "Creating garden meter configuration"
+echo "Creating system meter configuration"
 echo ""
 
 
@@ -119,4 +119,4 @@ fi
 
 cd $DIR
 
-echo "Completed creation of garden meter UI"
+echo "Completed creation of system meter UI"

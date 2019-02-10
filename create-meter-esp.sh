@@ -1,5 +1,5 @@
 echo ""
-echo "Creating garden meter configuration"
+echo "Creating system meter configuration"
 echo ""
 
 # Example:

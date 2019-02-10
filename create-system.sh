@@ -1,5 +1,5 @@
 echo ""
-echo "Creating JuiceIoT garden..."
+echo "Creating JuiceIoT system..."
 echo ""
 
 sh create-mqtt-service.sh

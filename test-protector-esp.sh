@@ -9,7 +9,7 @@ echo "----------" && \
 sh clean.sh
 
 echo "" && \
-echo "Creating garden protector ESP8266" && \
+echo "Creating system protector ESP8266" && \
 echo "" && \
 
 sh create-protector-esp.sh $PROTECTOR_LABEL $PROTECTOR_DEVICE_NAME $PROTECTOR_PORT && \

@@ -1,4 +1,4 @@
-echo "Pulling device info from remote garden computer..."
+echo "Pulling device info from remote system computer..."
 
 USERNAME=$1
 HOST=$2

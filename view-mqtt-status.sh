@@ -1,1 +1,1 @@
-systemctl status greensense-mosquitto-docker.service
+systemctl status juiceiot-mosquitto-docker.service

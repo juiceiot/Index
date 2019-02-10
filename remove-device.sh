@@ -1,5 +1,5 @@
 echo ""
-echo "Removing garden device configuration"
+echo "Removing system device configuration"
 echo ""
 
 DEVICE_NAME=$1
@@ -12,20 +12,20 @@ else
   echo "Device name: $DEVICE_NAME"
 
   echo "Disabling MQTT bridge service" && \
-  sh $SYSTEMCTL_SCRIPT disable greensense-mqtt-bridge-$DEVICE_NAME.service && \
+  sh $SYSTEMCTL_SCRIPT disable juiceiot-mqtt-bridge-$DEVICE_NAME.service && \
 
   echo "Removing MQTT bridge service" && \
-  rm -f scripts/apps/BridgeArduinoSerialToMqttSplitCsv/svc/greensense-mqtt-bridge-$DEVICE_NAME.service && \
+  rm -f scripts/apps/BridgeArduinoSerialToMqttSplitCsv/svc/juiceiot-mqtt-bridge-$DEVICE_NAME.service && \
 
   echo "Disabling updater service" && \
-  sh $SYSTEMCTL_SCRIPT disable greensense-updater-$DEVICE_NAME.service && \
+  sh $SYSTEMCTL_SCRIPT disable juiceiot-updater-$DEVICE_NAME.service && \
 
   echo "Removing updater service" && \
-  rm -f scripts/apps/GitDeployer/svc/greensense-updater-$DEVICE_NAME.service && \
+  rm -f scripts/apps/GitDeployer/svc/juiceiot-updater-$DEVICE_NAME.service && \
 
   # Remove from mobile UI
   #  cd mobile/linearmqtt/ && \
-  #  sh remove-garden-meter-ui.sh $DEVICE_NAME && \
+  #  sh remove-system-meter-ui.sh $DEVICE_NAME && \
   #  cd $DIR
 
   echo "Garden device removed: $DEVICE_NAME"

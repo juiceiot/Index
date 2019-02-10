@@ -1,15 +1,15 @@
 
 echo "----------"
-echo "Testing create garden scripts"
+echo "Testing create system scripts"
 echo "----------"
 
-sh create-garden.sh && \
+sh create-system.sh && \
 
 echo "----------" && \
 echo "Checking results" && \
 echo "----------" && \
 
-SERVICE_FILE="/lib/systemd/system/greensense-mosquitto-docker.service" && \
+SERVICE_FILE="/lib/systemd/system/juiceiot-mosquitto-docker.service" && \
 
 if [ ! -f "$SERVICE_FILE" ]; then
     echo "Mosquitto docker service file not found at:" && \
@@ -24,4 +24,4 @@ echo "----------" && \
 echo "Cleaning up" && \
 echo "----------" && \
 
-sh disable-garden.sh
+sh disable-system.sh

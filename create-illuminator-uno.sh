@@ -1,5 +1,5 @@
 echo ""
-echo "Creating garden illuminator configuration"
+echo "Creating system illuminator configuration"
 echo ""
 
 # Example:

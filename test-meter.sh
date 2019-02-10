@@ -10,7 +10,7 @@ sh clean.sh && \
 sh remove-devices.sh && \
 
 echo "" && \
-echo "Creating garden meter services" && \
+echo "Creating system meter services" && \
 echo "" && \
 
 sh create-meter.sh $MONITOR_LABEL $MONITOR_DEVICE_NAME $MONITOR_PORT

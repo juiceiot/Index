@@ -1,5 +1,5 @@
 echo ""
-echo "Creating garden protector configuration"
+echo "Creating system protector configuration"
 echo ""
 
 # Example:

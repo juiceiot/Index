@@ -1,5 +1,5 @@
 echo ""
-echo "Creating garden meter ESP8266 configuration"
+echo "Creating system meter ESP8266 configuration"
 echo ""
 
 # Example:

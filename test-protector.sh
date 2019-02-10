@@ -9,7 +9,7 @@ echo "----------" && \
 sh clean.sh
 
 echo "" && \
-echo "Creating garden protector services" && \
+echo "Creating system protector services" && \
 echo "" && \
 
 sh create-protector.sh $PROTECTOR_LABEL $PROTECTOR_DEVICE_NAME $PROTECTOR_PORT

@@ -1,5 +1,5 @@
 echo ""
-echo "Removing garden device services"
+echo "Removing system device services"
 echo ""
 
 DIR=$PWD
@@ -51,7 +51,7 @@ echo ""
 echo "Installed services"
 echo ""
 
-for filename in /lib/systemd/system/greensense-*.service; do
+for filename in /lib/systemd/system/juiceiot-*.service; do
   [ -f "$filename" ] || break
   shortname=$(basename $filename)
   echo "Removing service: $shortname" && \
@@ -62,4 +62,4 @@ for filename in /lib/systemd/system/greensense-*.service; do
   sudo rm -v $filename || exit 1
 done
 
-echo "Finished removing garden device services"
+echo "Finished removing system device services"
