@@ -31,7 +31,7 @@ namespace JuiceIoT.Index.Tests.Unit
 
 			Console.WriteLine("Checking device UI was created...");
 
-			CheckDeviceUIWasCreated(deviceLabel, deviceName, "Voltage", "V");
+			CheckDeviceUIWasCreated(deviceLabel, deviceName, "Protector1", "A", "Voltage", "VC");
 
 			Console.WriteLine("Creating device info folder...");
 

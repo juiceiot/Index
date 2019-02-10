@@ -1,5 +1,5 @@
 echo ""
-echo "Creating system protector configuration"
+echo "Creating protector"
 echo ""
 
 # Example:
@@ -32,7 +32,7 @@ echo "Device port: $DEVICE_PORT"
 sh create-protector-ui.sh $DEVICE_LABEL $DEVICE_NAME $DEVICE_PORT && \
 
 # Create device info
-sh create-device-info.sh protector/SoilMoistureSensorCalibratedPump $DEVICE_LABEL $DEVICE_NAME $DEVICE_PORT && \
+sh create-device-info.sh protector/VoltageCurrentMAX471SensorCalibratedSwitch $DEVICE_LABEL $DEVICE_NAME $DEVICE_PORT && \
 
 # Set up MQTT bridge service
 sh create-mqtt-bridge-service.sh protector $DEVICE_NAME $DEVICE_PORT && \
@@ -43,4 +43,4 @@ sh create-updater-service.sh protector uno $DEVICE_NAME $DEVICE_PORT && \
 # Uploading sketch
 sh upload-protector-uno-sketch.sh $DEVICE_PORT && \
 
-echo "Garden protector created with device name '$DEVICE_NAME'"
+echo "Protector created with device name '$DEVICE_NAME'"

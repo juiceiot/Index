@@ -27,7 +27,7 @@ namespace JuiceIoT.Index.Tests.Integration
 
 			CheckDeviceInfoWasCreated(deviceType, deviceLabel, deviceName, devicePort);
 
-			CheckDeviceUIWasCreated(deviceLabel, deviceName, "Voltage", "V");
+			CheckDeviceUIWasCreated(deviceLabel, deviceName, "Meter1", "A", "Voltage", "VC");
 
 			CheckMqttBridgeServiceFileWasCreated(deviceName);
 

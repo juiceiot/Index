@@ -5,7 +5,7 @@ echo ""
 
 # Example:
 # sh create-meter-ui.sh [Label] [DeviceName]
-# sh create-meter-ui.sh MyMonitor mymeter
+# sh create-meter-ui.sh MyMeter mymeter
 
 PROJECT_DIR=$PWD
 DEVICE_EXISTS=false
@@ -14,7 +14,7 @@ DEVICE_LABEL=$1
 DEVICE_NAME=$2
 
 if [ ! $DEVICE_LABEL ]; then
-  DEVICE_LABEL="Monitor1"
+  DEVICE_LABEL="Meter1"
 fi
 if [ ! $DEVICE_NAME ]; then
   DEVICE_NAME="meter1"
@@ -43,68 +43,68 @@ if [ $DEVICE_EXISTS = false ]; then
   echo ""
   echo "Setting up json"
 
-  # Monitor tab
+  # Meter tab
 
-  MONITOR_TAB=$(cat parts/metertab.json) && \
+  METER_TAB=$(cat parts/metertab.json) && \
 
-#  echo "---------- Monitor Tab: Before"
-#  echo $MONITOR_TAB
+#  echo "---------- Meter Tab: Before"
+#  echo $METER_TAB
 #  echo "----------"
 
-  MONITOR_TAB=$(echo $MONITOR_TAB | sed "s/Monitor1/$DEVICE_LABEL/g") && \
-  MONITOR_TAB=$(echo $MONITOR_TAB | sed "s/meter1/$DEVICE_NAME/g") && \
+  METER_TAB=$(echo $METER_TAB | sed "s/Meter1/$DEVICE_LABEL/g") && \
+  METER_TAB=$(echo $METER_TAB | sed "s/meter1/$DEVICE_NAME/g") && \
 
-  MONITOR_TAB=$(echo $MONITOR_TAB | jq .id=$DEVICE_ID) && \
+  METER_TAB=$(echo $METER_TAB | jq .id=$DEVICE_ID) && \
 
-#  echo "---------- Monitor Tab: After"
-#  echo $MONITOR_TAB
+#  echo "---------- Meter Tab: After"
+#  echo $METER_TAB
 #  echo "----------"
 
-  NEW_SETTINGS=$(jq ".tabs[$DEVICE_COUNT] |= . + $MONITOR_TAB" $NEW_LINEAR_MQTT_SETTINGS_FILE) && \
+  NEW_SETTINGS=$(jq ".tabs[$DEVICE_COUNT] |= . + $METER_TAB" $NEW_LINEAR_MQTT_SETTINGS_FILE) && \
 
   echo $NEW_SETTINGS > $NEW_LINEAR_MQTT_SETTINGS_FILE && \
 
-  # Monitor summary
+  # Meter summary
 
-  MONITOR_SUMMARY=$(cat parts/metersummary.json) && \
+  METER_SUMMARY=$(cat parts/metersummary.json) && \
 
-#  echo "---------- Monitor Summary: Before"
-#  echo $MONITOR_SUMMARY
+#  echo "---------- Meter Summary: Before"
+#  echo $METER_SUMMARY
 #  echo "----------"
 
-  MONITOR_SUMMARY=$(echo $MONITOR_SUMMARY | sed "s/Monitor1/$DEVICE_LABEL/g") && \
-  MONITOR_SUMMARY=$(echo $MONITOR_SUMMARY | sed "s/meter1/$DEVICE_NAME/g") && \
+  METER_SUMMARY=$(echo $METER_SUMMARY | sed "s/Meter1/$DEVICE_LABEL/g") && \
+  METER_SUMMARY=$(echo $METER_SUMMARY | sed "s/meter1/$DEVICE_NAME/g") && \
 
-  #echo "---------- Monitor Summary: After"
-  #echo $MONITOR_SUMMARY
+  #echo "---------- Meter Summary: After"
+  #echo $METER_SUMMARY
   #echo "----------"
 
   DEVICE_INDEX=$(($DEVICE_COUNT-1))
 
   echo "Device index: $DEVICE_INDEX"
 
-  NEW_SETTINGS=$(jq ".dashboards[0].dashboard[$(($DEVICE_INDEX))] |= . + $MONITOR_SUMMARY" $NEW_LINEAR_MQTT_SETTINGS_FILE) && \
+  NEW_SETTINGS=$(jq ".dashboards[0].dashboard[$(($DEVICE_INDEX))] |= . + $METER_SUMMARY" $NEW_LINEAR_MQTT_SETTINGS_FILE) && \
 
   echo $NEW_SETTINGS > $NEW_LINEAR_MQTT_SETTINGS_FILE && \
 
-  # Monitor dashboard
+  # Meter dashboard
 
-  MONITOR_DASHBOARD=$(cat parts/meterdashboard.json) && \
+  METER_DASHBOARD=$(cat parts/meterdashboard.json) && \
 
-  #echo "---------- Monitor Dashboard: Before"
-  #echo $MONITOR_DASHBOARD
+  #echo "---------- Meter Dashboard: Before"
+  #echo $METER_DASHBOARD
   #echo "----------"
 
-  MONITOR_DASHBOARD=$(echo $MONITOR_DASHBOARD | sed "s/Monitor1/$DEVICE_LABEL/g") && \
-  MONITOR_DASHBOARD=$(echo $MONITOR_DASHBOARD | sed "s/meter1/$DEVICE_NAME/g") && \
+  METER_DASHBOARD=$(echo $METER_DASHBOARD | sed "s/Meter1/$DEVICE_LABEL/g") && \
+  METER_DASHBOARD=$(echo $METER_DASHBOARD | sed "s/meter1/$DEVICE_NAME/g") && \
 
-  #MONITOR_DASHBOARD=$(echo $MONITOR_DASHBOARD | jq .id="$DEVICE_ID") && \
+  #METER_DASHBOARD=$(echo $METER_DASHBOARD | jq .id="$DEVICE_ID") && \
 
-  #echo "---------- Monitor Dashboard: After"
-  #echo $MONITOR_DASHBOARD
+  #echo "---------- Meter Dashboard: After"
+  #echo $METER_DASHBOARD
   #echo "----------"
 
-  NEW_SETTINGS=$(jq ".dashboards[$DEVICE_COUNT] |= . + $MONITOR_DASHBOARD" $NEW_LINEAR_MQTT_SETTINGS_FILE) && \
+  NEW_SETTINGS=$(jq ".dashboards[$DEVICE_COUNT] |= . + $METER_DASHBOARD" $NEW_LINEAR_MQTT_SETTINGS_FILE) && \
 
   echo $NEW_SETTINGS > newsettings.json && \
 

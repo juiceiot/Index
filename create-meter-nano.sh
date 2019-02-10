@@ -1,5 +1,5 @@
 echo ""
-echo "Creating system meter ESP8266 configuration"
+echo "Creating power meter"
 echo ""
 
 # Example:
@@ -33,7 +33,7 @@ echo "Setting up Linear MQTT Dashboard UI..." && \
 sh create-meter-ui.sh $DEVICE_LABEL $DEVICE_NAME $DEVICE_PORT && \
 
 # Create device info
-sh create-device-info.sh meter/SoilMoistureSensorCalibratedSerial $DEVICE_LABEL $DEVICE_NAME $DEVICE_PORT && \
+sh create-device-info.sh meter/VoltageCurrentMAX471SensorCalibratedSerial $DEVICE_LABEL $DEVICE_NAME $DEVICE_PORT && \
 
 # Set up MQTT bridge service
 sh create-mqtt-bridge-service.sh meter $DEVICE_NAME $DEVICE_PORT && \
