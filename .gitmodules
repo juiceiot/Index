@@ -1,0 +1,6 @@
+[submodule "sketches/protector/VoltageCurrentMAX471SensorCalibratedSwitch"]
+	path = sketches/protector/VoltageCurrentMAX471SensorCalibratedSwitch
+	url = https://github.com/juiceiot/VoltageCurrentMAX471SensorCalibratedSwitch.git
+[submodule "sketches/meter/VoltageCurrentMAX471SensorCalibratedSerial"]
+	path = sketches/meter/VoltageCurrentMAX471SensorCalibratedSerial
+	url = https://github.com/juiceiot/VoltageCurrentMAX471SensorCalibratedSerial.git

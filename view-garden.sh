@@ -1,0 +1,1 @@
+sh view-devices.sh
