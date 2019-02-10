@@ -1,0 +1,10 @@
+ [Unit]
+ Description=JuiceIoT Mosquitto Docker Service
+ After=multi-user.target
+
+ [Service]
+ Type=idle
+ ExecStart=/bin/sh -c "wget -O - https://raw.githubusercontent.com/JuiceIoT/Index/master/scripts/docker/mosquitto/run-mosquitto-arm.sh | sh -s"
+
+ [Install]
+ WantedBy=multi-user.target
