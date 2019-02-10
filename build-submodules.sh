@@ -1,25 +1,13 @@
 INDEX_DIR=$PWD
 
 echo "Building meter" && \
-cd sketches/meter/SoilMoistureSensorCalibratedSerial && \
-sh build-all.sh && \
-cd $INDEX_DIR && \
-echo "" && \
-
-echo "Building meter ESP" && \
-cd sketches/meter/SoilMoistureSensorCalibratedSerialESP && \
+cd sketches/meter/VoltageCurrentMAX471SensorCalibratedSerial && \
 sh build-all.sh && \
 cd $INDEX_DIR && \
 echo "" && \
 
 echo "Building protector" && \
-cd sketches/protector/SoilMoistureSensorCalibratedPump && \
-sh build-all.sh && \
-cd $INDEX_DIR && \
-echo "" && \
-
-echo "Building protector ESP" && \
-cd sketches/protector/SoilMoistureSensorCalibratedPumpESP && \
+cd sketches/protector/VoltageCurrentMAX471SensorCalibratedSwitch && \
 sh build-all.sh && \
 cd $INDEX_DIR && \
 echo "" && \
