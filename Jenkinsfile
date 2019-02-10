@@ -11,8 +11,6 @@ pipeline {
                 sh 'git checkout $BRANCH_NAME'
                 sh 'git pull origin $BRANCH_NAME'
                 shHide( 'sh set-wifi-credentials.sh ${WIFI_NAME} ${WIFI_PASSWORD}' )
-                sh 'git config --global user.email "compulsivecoder@gmail.com"'
-                sh 'git config --global user.name "CompulsiveCoder CI"'
                 sh 'sh init-mock-systemctl.sh'
                 sh 'sh init-mock-docker.sh'
                 sh 'sh init-mock-setup.sh'
